@@ -20,7 +20,7 @@
 ## 1. 建仓库并推上去
 
 ```bash
-cd C:\Users\failure\Desktop\dsh_skill\xdpool-billing-plugin
+cd dsh-xdpool-billing
 # 建库（网页上建一个空仓库 dsh-xdpool-billing，不要勾 README/.gitignore/LICENSE）
 git remote add origin https://github.com/Xun-Prog/dsh-xdpool-billing.git
 git push -u origin main
