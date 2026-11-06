@@ -30,17 +30,18 @@ git push -u origin main
 
 **给仓库加 `dsh-plugin` topic**（仓库首页 → 齿轮 Settings → Topics，或首页 tag 图标）。CI 会检查。
 
-## 2. 截图（10 分钟，强烈建议）
+## 2. 截图（已完成）
 
-收录后市场卡片和详情页会展示截图。不传也能上，只是卡片是灰的。
+`assets/screenshot-panel.png` 已就位，`screenshots.json` 指向它，README 里也嵌了同一张。
 
-1. 打开 DSH，把胶囊展开，截一张面板全貌 → 存成 `assets/screenshot-panel.png`
-2. 再截一张过期日历部分 → 存成 `assets/screenshot-expiry.png`
-3. 尺寸别太大（宽度 1200px 左右，PNG 转成 JPG 更省）
+**这张图是用示例数据渲染的**，不是从你真实面板截的——所以不带你的账号昵称、手机尾号和余额。想换成真实截图（或加更多张）：
 
-`screenshots.json` 已经写好指向这两个路径，你把文件放进去即可。**顺序就是展示顺序**，最多 8 张。
+1. 打开 DSH 把胶囊展开截图
+2. 存进 `assets/`，在 `screenshots.json` 里按希望的展示顺序列出（最多 8 张）
 
-如果暂时没有截图，**删掉 `screenshots.json`**——市场会自动从 README 抽图，比挂两个 404 好。
+⚠️ 截真实面板前先想清楚：面板上是你真实的账号昵称、手机尾号和积分余额，会永久公开在 GitHub 上。**建议就用示例数据这张，或者打码后再传。**
+
+截图路径规则：相对路径，不能跳出插件目录（不能以 `/` 开头、不能含 `..`）；只接受 GitHub 托管的图，第三方图床会被拒。
 
 ## 3. 发 npm（推荐）
 

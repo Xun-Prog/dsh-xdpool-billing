@@ -38,6 +38,7 @@ window.__ModuleLoader__.load({
       stale: '个旧读数',
       staleHint: '部分账号本次查询失败，显示的是上一次读数：',
       expiry: '过期预警',
+      expiryPerAccount: '各账号最近到期',
       noExpiry: '暂无快过期的积分',
       nextExpiry: '最近到期',
       days: '天',
@@ -67,6 +68,7 @@ window.__ModuleLoader__.load({
       stale: 'stale',
       staleHint: 'Some accounts failed to refresh; showing last known reading:',
       expiry: 'Expiry',
+      expiryPerAccount: 'Next expiry per account',
       noExpiry: 'No credits expiring soon',
       nextExpiry: 'Next expiry',
       days: 'd',
@@ -397,6 +399,13 @@ window.__ModuleLoader__.load({
                 ),
                 // 每个账号各自的「最近一次到期」：全局那张表回答「什么时候过期」，
                 // 这一行回答「我哪个号有积分要过期」。
+                accounts.some(account => account.expiry?.nextExpiry)
+                  ? h(
+                      'div',
+                      { style: { ...S.dim, marginTop: 6 } },
+                      t('expiryPerAccount'),
+                    )
+                  : null,
                 accounts.some(account => account.expiry?.nextExpiry)
                   ? accounts.map(account => {
                       const next = account.expiry?.nextExpiry
