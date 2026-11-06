@@ -1,0 +1,6 @@
+# dsh-xdpool-billing bundle patch: mounts one Host row (XD Pool 轮询 + 状态端点)。
+# The Client half is selected by dsh.client in package.json, not by a row here.
+- insert:
+    - id: xdpool-billing
+      name: dsh-xdpool-billing
+      inject: [webServer, tools]

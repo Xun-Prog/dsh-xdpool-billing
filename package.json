@@ -1,0 +1,65 @@
+{
+  "name": "dsh-xdpool-billing",
+  "displayName": "XD Pool Billing Meter",
+  "version": "1.0.0",
+  "description": "XD Pool（WorkBuddy）积分计费面板：显示每个账号的剩余积分与积分包明细，并按余额快照差值实测统计今日/本月/累计已消耗积分，附 token 用量汇总。XD Pool credit balance and consumption meter for DeepSeek Harness.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Xun-Prog",
+  "homepage": "https://github.com/Xun-Prog/dsh-xdpool-billing#readme",
+  "bugs": {
+    "url": "https://github.com/Xun-Prog/dsh-xdpool-billing/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xun-Prog/dsh-xdpool-billing.git"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "dsh",
+    "workbuddy",
+    "xdpool",
+    "credits",
+    "billing",
+    "usage"
+  ],
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.1.5-rc.1 <0.3.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/billing.test.mjs test/client-balance.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  }
+}

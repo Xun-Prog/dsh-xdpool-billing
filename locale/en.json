@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "XD Pool Billing Meter",
+    "description": "Shows each XD Pool account's remaining credits and package breakdown, with today/month/all-time consumption measured from balance snapshots, plus a token usage summary."
+  }
+}
